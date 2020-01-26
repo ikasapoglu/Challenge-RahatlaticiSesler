@@ -1,4 +1,4 @@
-package com.challenge.rahatlatcsesler
+package com.challenge.rahatlaticisesler
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

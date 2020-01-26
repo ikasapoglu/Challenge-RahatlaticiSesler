@@ -1,4 +1,4 @@
-package com.challenge.rahatlatcsesler
+package com.challenge.rahatlaticisesler
 
 import org.junit.Test
 
