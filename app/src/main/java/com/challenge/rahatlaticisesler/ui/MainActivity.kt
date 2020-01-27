@@ -1,7 +1,8 @@
-package com.challenge.rahatlaticisesler
+package com.challenge.rahatlaticisesler.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.challenge.rahatlaticisesler.R
 
 class MainActivity : AppCompatActivity() {
 
