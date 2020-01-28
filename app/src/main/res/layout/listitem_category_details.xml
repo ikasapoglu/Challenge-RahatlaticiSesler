@@ -52,16 +52,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
+                    android:background="@drawable/baseline_favorite_selector"
+                    android:button="@null"
                     android:checked="@{sound.favorited}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/btn_listitem_detail_play" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/btn_listitem_detail_play"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
+                    android:background="@drawable/baseline_play_circle_filled_white_48"
+                    app:backgroundTint="@color/colorPrimary"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/iv_li_categorie" />
             </androidx.constraintlayout.widget.ConstraintLayout>

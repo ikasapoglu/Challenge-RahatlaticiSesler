@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Challenge-RahatlaticiSesler-Rahatlatıcı Sesler.iml" filepath="$PROJECT_DIR$/Challenge-RahatlaticiSesler-Rahatlatıcı Sesler.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/Challenge-RahatlaticiSesler-app.iml" filepath="$PROJECT_DIR$/app/Challenge-RahatlaticiSesler-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Desktop-Challenge-RahatlaticiSesler-Rahatlatıcı Sesler.iml" filepath="$PROJECT_DIR$/Desktop-Challenge-RahatlaticiSesler-Rahatlatıcı Sesler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/Desktop-Challenge-RahatlaticiSesler-app.iml" filepath="$PROJECT_DIR$/app/Desktop-Challenge-RahatlaticiSesler-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/Rahatlatıcı Sesler.iml" filepath="$PROJECT_DIR$/Rahatlatıcı Sesler.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
