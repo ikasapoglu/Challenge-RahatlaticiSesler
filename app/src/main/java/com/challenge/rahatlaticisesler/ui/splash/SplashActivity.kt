@@ -17,6 +17,7 @@ class SplashActivity : AppCompatActivity() {
     private fun simulateProgress() {
         Handler().postDelayed({
             MainActivity.start(this@SplashActivity)
+            finish()
         }, SPLASH_DELAY)
     }
 }
