@@ -10,5 +10,17 @@
         android:name="com.challenge.rahatlaticisesler.ui.categories.CategoriesFragment"
         android:label="Categories"
         tools:layout="@layout/fragment_categories">
+        <action
+            android:id="@+id/action_categoriesFragment_to_categoryDetailsFragment"
+            app:destination="@id/categoryDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryDetailsFragment"
+        android:name="com.challenge.rahatlaticisesler.ui.categorydetails.CategoryDetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_category_details">
+        <argument
+            android:name="categoryId"
+            app:argType="string" />
     </fragment>
 </navigation>
