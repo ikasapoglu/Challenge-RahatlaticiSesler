@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Rahatlatıcı Sesler</string>
+    <string name="noInternetConnection">There is no internet connection.</string>
+    <string name="menuitem_favorites">Favorites</string>
+    <string name="menuitem_library">Library</string>
 </resources>
