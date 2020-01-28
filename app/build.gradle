@@ -24,7 +24,11 @@ android {
         }
     }
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_API_URL", "\"https://icoupstudios.com/challenge/\"")
+        }
         release {
+            buildConfigField("String", "BASE_API_URL", "\"https://icoupstudios.com/challenge/\"")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }

@@ -35,7 +35,7 @@ interface IApiService {
 
             return Retrofit.Builder()
                 .client(okkHttpclient)
-                .baseUrl(Constants.BASE_URL)
+                .baseUrl(Constants.BASE_API_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(IApiService::class.java)

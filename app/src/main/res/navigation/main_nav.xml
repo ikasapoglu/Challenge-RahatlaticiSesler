@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/categoriesFragment"
         android:name="com.challenge.rahatlaticisesler.ui.categories.CategoriesFragment"
-        android:label="Categories"
+        android:label="@string/section_categories"
         tools:layout="@layout/fragment_categories">
         <action
             android:id="@+id/action_categoriesFragment_to_categoryDetailsFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/categoryDetailsFragment"
         android:name="com.challenge.rahatlaticisesler.ui.categorydetails.CategoryDetailsFragment"
-        android:label="Details"
+        android:label="@string/section_details"
         tools:layout="@layout/fragment_category_details">
         <argument
             android:name="categoryId"
@@ -26,6 +26,6 @@
     <fragment
         android:id="@+id/favoritesFragment"
         android:name="com.challenge.rahatlaticisesler.ui.favorites.FavoritesFragment"
-        android:label="Favorites"
+        android:label="@string/section_favorites"
         tools:layout="@layout/fragment_favorites" />
 </navigation>

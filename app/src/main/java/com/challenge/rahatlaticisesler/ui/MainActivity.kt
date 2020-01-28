@@ -1,5 +1,7 @@
 package com.challenge.rahatlaticisesler.ui
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
@@ -32,5 +34,11 @@ class MainActivity : AppCompatActivity() {
         bottom_nav.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
         NavigationUI.setupWithNavController(bottom_nav, navController)
+    }
+
+    companion object {
+        fun start(context: Context) {
+            context.startActivity(Intent(context, MainActivity::class.java))
+        }
     }
 }
