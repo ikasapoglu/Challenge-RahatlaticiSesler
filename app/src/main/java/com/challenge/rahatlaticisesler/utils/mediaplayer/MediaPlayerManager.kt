@@ -10,7 +10,7 @@ import com.challenge.rahatlaticisesler.utils.setVolumeBothSide
  *
  * When getting an instance from this class just call [playSound] method in anywhere. It will manage all states automatically.
  * Don't worry about initial pool size,
- * it will automatically increasing when more need players and returns back to initial pool size with removing surpluses players when they are completed.
+ * it will automatically increasing when need more players and returns back to initial pool size with removing surpluses players when they are completed.
  *
  * IMPORTANT: Don't forget to call [destroyAllPlayers] method when done with it.
  *

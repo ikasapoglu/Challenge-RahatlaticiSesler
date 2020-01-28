@@ -1,52 +1,38 @@
-package com.challenge.rahatlaticisesler.ui.categorydetails
+package com.challenge.rahatlaticisesler.ui.favorites
 
 import android.os.Bundle
 import android.view.View
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.challenge.rahatlaticisesler.R
 import com.challenge.rahatlaticisesler.base.BaseRecyclerViewFragment
 import com.challenge.rahatlaticisesler.data.models.Sound
+import com.challenge.rahatlaticisesler.ui.categorydetails.CategoryDetailsAdapter
 import com.challenge.rahatlaticisesler.utils.callbacks.IAdapterItemClickListener
 import com.challenge.rahatlaticisesler.utils.callbacks.IItemFavoriteStateChangeListener
 import com.challenge.rahatlaticisesler.utils.callbacks.IItemVolumeStateChangeListener
-import kotlinx.android.synthetic.main.fragment_category_details.*
+import kotlinx.android.synthetic.main.fragment_favorites.*
+import org.kodein.di.KodeinAware
 import org.kodein.di.generic.instance
 
-class CategoryDetailsFragment :
-    BaseRecyclerViewFragment<CategoryDetailsAdapter>(),
+
+class FavoritesFragment : BaseRecyclerViewFragment<CategoryDetailsAdapter>(), KodeinAware,
     IAdapterItemClickListener<Sound>,
     IItemFavoriteStateChangeListener,
     IItemVolumeStateChangeListener {
 
-    private lateinit var viewModel: CategoryDetailsViewModel
-    private val factory: CategoryDetailsViewModelFactory by instance()
-
-    private var favList = MutableLiveData<List<Sound>>()
+    private lateinit var viewModel: FavoritesViewModel
+    private val factory: FavoritesViewModelFactory by instance()
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        val categoryId = arguments?.get(KEY_CATEGORYID) as String
-
-        viewModel = ViewModelProvider(this, factory).get(CategoryDetailsViewModel::class.java)
-
-        viewModel.isLoading.observe(this, Observer {
-            if (it) progressDialog.show() else progressDialog.hide()
-        })
+        viewModel = ViewModelProvider(this, factory).get(FavoritesViewModel::class.java)
 
         viewModel.getFavorites()
-        viewModel.getCategoryDetails(categoryId.toInt())
 
-        viewModel.categoryDetails.observe(this, Observer { sounds ->
-            rvAdapter.updateSoundList(sounds)
-            rvAdapter.updateFavorites(favList.value!!)
-        })
-
-        viewModel.favorites.observe(this, Observer { favs ->
-            favList.value = favs
+        viewModel.favorites.observe(this, Observer { favorites ->
+            rvAdapter.updateSoundList(favorites)
         })
     }
 
@@ -64,21 +50,19 @@ class CategoryDetailsFragment :
 
     override fun OnFavStateChange(boolean: Boolean, item: Sound) {
         viewModel.favoriteStatusChanged(boolean, item)
+        viewModel.getFavorites()
     }
 
+
     override fun getRecyclerView(): RecyclerView {
-        return rv_categorydetails
+        return rv_favorites
+    }
+
+    override fun getLayoutRes(): Int {
+        return R.layout.fragment_favorites
     }
 
     override fun getAdapter(): CategoryDetailsAdapter {
         return CategoryDetailsAdapter(this, this, this)
-    }
-
-    override fun getLayoutRes(): Int {
-        return R.layout.fragment_category_details
-    }
-
-    companion object {
-        const val KEY_CATEGORYID = "categoryId"
     }
 }

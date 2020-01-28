@@ -7,7 +7,7 @@ import com.challenge.rahatlaticisesler.data.repo.RelaxingSoundsRepository
 import com.challenge.rahatlaticisesler.ui.SoundsViewModel
 import com.challenge.rahatlaticisesler.utils.CoroutineHelper
 
-class CategoryDetailsViewModel(private val repository: RelaxingSoundsRepository) : SoundsViewModel() {
+class CategoryDetailsViewModel(private val repository: RelaxingSoundsRepository) : SoundsViewModel(repository) {
 
     private val _categoryDetails = MutableLiveData<List<Sound>>()
     val categoryDetails: LiveData<List<Sound>>

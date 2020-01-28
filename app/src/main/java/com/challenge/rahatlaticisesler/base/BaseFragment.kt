@@ -35,7 +35,7 @@ abstract class BaseFragment : Fragment(), KodeinAware {
         return inflater.inflate(getLayoutRes(), container, false)
     }
 
-    fun buildProgressDialog() {
+    private fun buildProgressDialog() {
         activity?.let {
             progressDialog = Dialog(activity!!)
             progressDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)

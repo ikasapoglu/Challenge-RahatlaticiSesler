@@ -23,4 +23,9 @@
             android:name="categoryId"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.challenge.rahatlaticisesler.ui.favorites.FavoritesFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorites" />
 </navigation>
